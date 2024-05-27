@@ -6,3 +6,15 @@ class Product < ActiveRecord::Base
   # In other words, a product belongs to a category.
   belongs_to :category
 end
+
+=begin
+Product Table Columns
+id
+name
+description
+price
+stock_quantity
+category_id
+created_at
+updated_at
+=end
