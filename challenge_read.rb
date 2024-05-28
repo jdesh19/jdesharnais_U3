@@ -1,4 +1,5 @@
 require_relative 'ar.rb'
+=begin
 puts "\n"
 
 number_of_products = Product.count
@@ -16,3 +17,20 @@ puts "\n"
 #Total number of products with a low stock quantity. (Low is defined as less than 5 in stock.)
 low_quantity = Product.where("stock_quantity <= 5")
 puts "There are #{low_quantity.count} products that are low in stock."
+
+find_product_category = Product.find(155)
+puts find_product_category.name
+
+category_name = find_product_category.category.name
+puts category_name
+=end
+beverage = Category.where(:name => 'Beverages').first
+
+new_product_with_assoc = beverage.products.build( name: 'Dr. Pepper',
+                                                  description: "soft drink",
+                                                  price: 3,
+                                                  stock_quantity: 100,
+                                                )
+new_product_with_assoc.save
+
+puts new_product_with_assoc.inspect
