@@ -23,14 +23,26 @@ puts find_product_category.name
 
 category_name = find_product_category.category.name
 puts category_name
-=end
 beverage = Category.where(:name => 'Beverages').first
 
 new_product_with_assoc = beverage.products.build( name: 'Dr. Pepper',
-                                                  description: "soft drink",
-                                                  price: 3,
-                                                  stock_quantity: 100,
-                                                )
+description: "soft drink",
+price: 3,
+stock_quantity: 100,
+)
 new_product_with_assoc.save
 
 puts new_product_with_assoc.inspect
+
+target_category = Category.find(2)
+puts target_category.inspect
+
+products_with_category = target_category.products.where("price > 25")
+
+products_with_category.each do |product|
+    puts product.name
+    puts product.price
+end
+=end
+most_recent = Category.last
+puts most_recent.name
