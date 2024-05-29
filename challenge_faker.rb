@@ -8,9 +8,11 @@ require_relative 'ar.rb'
     product_from_category = new_category.products.new( name: Faker::Commerce.unique.product_name,
                                                       description: Faker::Lorem.paragraph,
                                                       price: Faker::Commerce.price,
-                                                      stock_quantity: Faker::Number.between(from: 1, to: 200)
+                                                      stock_quantity: Faker::Number.non_zero_digit
 
                                                     )
+
+    puts product_from_category.inspect
 
 
     
