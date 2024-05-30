@@ -1,5 +1,5 @@
 require_relative 'ar.rb'
-=begin
+
 puts "\n"
 
 number_of_products = Product.count
@@ -10,8 +10,8 @@ puts "\n"
 
 #The names of all products above $10 with names that begin with the letter C.
 target_products = Product.where("name LIKE 'C%' AND price > 10")
-target_products.each do |product| 
-    puts product.name 
+target_products.each do |product|
+    puts product.name
 end
 puts "\n"
 #Total number of products with a low stock quantity. (Low is defined as less than 5 in stock.)
@@ -43,6 +43,3 @@ products_with_category.each do |product|
     puts product.name
     puts product.price
 end
-=end
-most_recent = Category.last
-puts most_recent.name
