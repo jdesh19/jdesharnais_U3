@@ -30,3 +30,12 @@ monitor = Product.create(
                         )
 
 puts monitor.inspect
+
+invalid = Product.create(
+                            name: "Monitor",
+                            price: 400,
+                        )
+
+invalid.errors.full_messages.each do |message|
+    puts message
+end
